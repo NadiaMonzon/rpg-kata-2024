@@ -17,6 +17,7 @@ describe("basic pj", () => {
   it("character should be able to attack", () => {
     const character = new Character();
     const characterTwo = new Character();
-    expect(character.pjAttack(800, characterTwo.health)).toBe(200);
+    character.pjAttack(800, characterTwo);
+    expect(characterTwo.health).toBe(200);   
   } )
 });
