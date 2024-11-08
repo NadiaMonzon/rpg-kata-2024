@@ -13,5 +13,8 @@ export class Character {
 
   pjHeal(amountHealth, character) {
     character.health = Math.min(character.health + amountHealth, 1000);
+    if (character.alive === false) {
+      character.health = 0;
+    }
   }
 }
