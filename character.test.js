@@ -56,4 +56,14 @@ describe("basic pj", () => {
 
     expect(characterTwo.health).toBe(1000);
   });
+
+  it("A dead character cannot be healed", () => {
+    const character = new Character();
+    const characterTwo = new Character();
+
+    character.pjAttack(1000, characterTwo);
+    character.pjHeal(200, characterTwo);
+
+    expect(characterTwo.health).toBe(0);
+  });
 });
