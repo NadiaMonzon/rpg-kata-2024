@@ -20,4 +20,10 @@ describe("basic pj", () => {
     character.pjAttack(800, characterTwo);
     expect(characterTwo.health).toBe(200);   
   } )
+  it(" When damage received exceeds current Health, Health becomes 0", () => {
+    const character = new Character();
+    const characterTwo = new Character();
+    character.pjAttack(1500, characterTwo);
+    expect(characterTwo.health).toBe(0);
+  })
 });
