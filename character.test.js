@@ -26,4 +26,10 @@ describe("basic pj", () => {
     character.pjAttack(1500, characterTwo);
     expect(characterTwo.health).toBe(0);
   })
+  it("When the pj health is equal to 0, the pj is dead", () => {
+    const character = new Character();
+    const characterTwo = new Character();
+    character.pjAttack(1500, characterTwo);
+    expect(characterTwo.alive).toBeFalsy();
+  })
 });
