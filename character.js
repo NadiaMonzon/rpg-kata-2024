@@ -5,19 +5,13 @@ export class Character {
   damage = 800;
 
   pjAttack(damage, character) {
-    if (damage > character.health) {
-      character.health = 0;
+    character.health = Math.max(character.health - damage, 0);
+    if (character.health <= 0) {
       character.alive = false;
-    } else {
-      character.health = character.health - damage;
     }
   }
 
   pjHeal(amountHealth, character) {
-    character.health = character.health + amountHealth;
-
-    if (character.health > 1000) {
-      character.health = 1000;
-    }
+    character.health = Math.min(character.health + amountHealth, 1000);
   }
 }
