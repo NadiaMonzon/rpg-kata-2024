@@ -15,5 +15,9 @@ export class Character {
 
   pjHeal(amountHealth, character) {
     character.health = character.health + amountHealth;
+
+    if (character.health > 1000) {
+      character.health = 1000;
+    }
   }
 }
