@@ -47,4 +47,13 @@ describe("basic pj", () => {
 
     expect(characterTwo.health).toBe(400);
   });
+
+  it("A character cannot be healed over 1000 health points", () => {
+    const character = new Character();
+    const characterTwo = new Character();
+
+    character.pjHeal(200, characterTwo);
+
+    expect(characterTwo.health).toBe(1000);
+  });
 });
