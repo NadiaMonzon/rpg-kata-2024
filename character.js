@@ -5,6 +5,11 @@ export class Character {
   damage = 800;
 
   pjAttack(damage, character){
-    character.health = character.health - damage;
+    if (damage > character.health){
+      character.health = 0;
+    }
+    else {
+      character.health = character.health - damage;
+    }
   }
 }
