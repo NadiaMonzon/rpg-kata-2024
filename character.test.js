@@ -20,21 +20,21 @@ describe("basic pj", () => {
   it("character should be able to attack", () => {
     const character = new Character();
     const characterTwo = new Character();
-    character.pjAttack(800, characterTwo);
+    character.dealDamage(800, characterTwo);
     expect(characterTwo.health).toBe(200);
   });
 
   it(" When damage received exceeds current Health, Health becomes 0", () => {
     const character = new Character();
     const characterTwo = new Character();
-    character.pjAttack(1500, characterTwo);
+    character.dealDamage(1500, characterTwo);
     expect(characterTwo.health).toBe(0);
   });
 
   it("When the pj health is equal to 0, the pj is dead", () => {
     const character = new Character();
     const characterTwo = new Character();
-    character.pjAttack(1500, characterTwo);
+    character.dealDamage(1500, characterTwo);
     expect(characterTwo.alive).toBeFalsy();
   });
 
@@ -42,8 +42,8 @@ describe("basic pj", () => {
     const character = new Character();
     const characterTwo = new Character();
 
-    character.pjAttack(800, characterTwo);
-    character.pjHeal(200, characterTwo);
+    character.dealDamage(800, characterTwo);
+    character.heal(200, characterTwo);
 
     expect(characterTwo.health).toBe(400);
   });
@@ -52,7 +52,7 @@ describe("basic pj", () => {
     const character = new Character();
     const characterTwo = new Character();
 
-    character.pjHeal(200, characterTwo);
+    character.heal(200, characterTwo);
 
     expect(characterTwo.health).toBe(1000);
   });
@@ -61,8 +61,8 @@ describe("basic pj", () => {
     const character = new Character();
     const characterTwo = new Character();
 
-    character.pjAttack(1000, characterTwo);
-    character.pjHeal(200, characterTwo);
+    character.dealDamage(1000, characterTwo);
+    character.heal(200, characterTwo);
 
     expect(characterTwo.health).toBe(0);
   });

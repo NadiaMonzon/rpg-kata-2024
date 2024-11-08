@@ -4,14 +4,18 @@ export class Character {
   alive = true;
   damage = 800;
 
-  pjAttack(damage, character) {
+  dealDamage(damage, character) {
     character.health = Math.max(character.health - damage, 0);
+    this.checkCharacterAliveStatus(character);
+  }
+
+  checkCharacterAliveStatus(character) {
     if (character.health <= 0) {
       character.alive = false;
     }
   }
 
-  pjHeal(amountHealth, character) {
+  heal(amountHealth, character) {
     character.health = Math.min(character.health + amountHealth, 1000);
     if (character.alive === false) {
       character.health = 0;
