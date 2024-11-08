@@ -19,7 +19,9 @@ export class Character {
   }
 
   heal(amountHealth, character) {
-    character.health = Math.min(character.health + amountHealth, 1000);
+    if (character === this){
+      character.health = Math.min(character.health + amountHealth, 1000);
+    }
     if (character.alive === false) {
       character.health = 0;
     }

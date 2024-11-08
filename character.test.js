@@ -43,18 +43,17 @@ describe("basic pj", () => {
     const characterTwo = new Character();
 
     character.dealDamage(800, characterTwo);
-    character.heal(200, characterTwo);
+    characterTwo.heal(200, characterTwo);
 
     expect(characterTwo.health).toBe(400);
   });
 
   it("A character cannot be healed over 1000 health points", () => {
     const character = new Character();
-    const characterTwo = new Character();
 
-    character.heal(200, characterTwo);
+    character.heal(200, character);
 
-    expect(characterTwo.health).toBe(1000);
+    expect(character.health).toBe(1000);
   });
 
   it("A dead character cannot be healed", () => {
@@ -62,7 +61,7 @@ describe("basic pj", () => {
     const characterTwo = new Character();
 
     character.dealDamage(1000, characterTwo);
-    character.heal(200, characterTwo);
+    characterTwo.heal(200, characterTwo);
 
     expect(characterTwo.health).toBe(0);
   });
