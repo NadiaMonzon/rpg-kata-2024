@@ -1,0 +1,16 @@
+{
+  "name": "rpg-kata",
+  "version": "1.0.0",
+  "description": "Source: [https://github.com/ardalis/kata-catalog](https://github.com/ardalis/kata-catalog)",
+  "main": "index.js",
+  "scripts": {
+    "start": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vitest/coverage-v8": "^2.1.4",
+    "vitest": "^2.1.4"
+  }
+}
