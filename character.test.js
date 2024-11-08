@@ -66,4 +66,9 @@ describe("basic pj", () => {
 
     expect(characterTwo.health).toBe(0);
   });
+  it("A character shouldn't do damage to itself", () => {
+    const character = new Character();
+    character.dealDamage(1000, character);
+    expect(character.health).toBe(1000);
+  })
 });
