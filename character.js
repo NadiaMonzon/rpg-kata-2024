@@ -5,6 +5,9 @@ export class Character {
   damage = 800;
 
   dealDamage(damage, character) {
+    if (character === this){
+      return;
+    }
     character.health = Math.max(character.health - damage, 0);
     this.checkCharacterAliveStatus(character);
   }
